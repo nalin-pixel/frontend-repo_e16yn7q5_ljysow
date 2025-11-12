@@ -1,26 +1,46 @@
-import { useState } from 'react'
+import React from 'react'
+import Hero from './components/Hero'
+import Navbar from './components/Navbar'
+import Section from './components/Section'
+import Projects from './components/Projects'
+import Skills from './components/Skills'
+import Contact from './components/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-[#05060a] text-white selection:bg-fuchsia-500/30 selection:text-white">
+      <Navbar />
+      <Hero />
+
+      <Section id="about" eyebrow="About" title="Design‑driven engineer crafting cosmic web experiences">
+        <div className="grid lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 leading-relaxed text-white/80">
+              I’m Abhinav — a full‑stack developer focused on expressive UI, buttery motion, and reliable backend systems. I blend art and engineering to ship interfaces that feel alive and purposeful.
+            </div>
+          </div>
+          <div className="grid gap-3">
+            <div className="rounded-xl bg-gradient-to-br from-fuchsia-600/20 to-cyan-500/20 border border-white/10 p-4">Remote • India</div>
+            <div className="rounded-xl bg-gradient-to-br from-fuchsia-600/20 to-cyan-500/20 border border-white/10 p-4">Available • Freelance</div>
+          </div>
         </div>
-      </div>
+      </Section>
+
+      <Section id="projects" eyebrow="Projects" title="Featured Work">
+        <Projects />
+      </Section>
+
+      <Section id="skills" eyebrow="Skills" title="Core Stack">
+        <Skills />
+      </Section>
+
+      <Section id="contact" eyebrow="Contact" title="Let’s build something interstellar">
+        <Contact />
+      </Section>
+
+      <footer className="py-10 text-center text-white/50">
+        © {new Date().getFullYear()} Abhinav. Built with love and stardust.
+      </footer>
     </div>
   )
 }
